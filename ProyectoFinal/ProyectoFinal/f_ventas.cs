@@ -281,21 +281,24 @@ namespace ProyectoFinal
             DataTable dt = new DataTable();
             DataTable tmp = new DataTable();
 
-            q = "SELECT SUM(cantidad) as n from tblAsignacionCantidad WHERE id_asignacionprecio={0} AND id_sucursal={1}";
+            q = "SELECT SUM(cantidad) as n from tblAsignacionCantidad WHERE id_asignacionprecio={0} AND id_sucursal={1} and cantidad>0";
             q = string.Format(q, cod, sucursal);
             tmp = da.fillDataTable(q);
-            MessageBox.Show(tmp.Rows[0]["n"].ToString());
+            if (tmp.Rows[0]["n"].ToString()=="")
+            {
+                return -1;
+            }
             if (Convert.ToInt16(tmp.Rows[0]["n"]) < Convert.ToInt16(txtCantidad.Text))
             {
                 codigo = -1;
             }
             else
             {
-                q = "SELECT id_asignacion, fecha_caducidad from tblAsignacionCantidad where id_asignacionprecio={0} and id_sucursal={1} AND cantidad>0";
+                q = "SELECT id_asignacionprecio, fecha_caducidad from tblAsignacionCantidad where id_asignacionprecio={0} and id_sucursal={1} AND cantidad>0";
                 q += " ORDER BY fecha_caducidad ASC";
                 q = string.Format(q, cod, sucursal);
                 dt = da.fillDataTable(q);
-                codigo = Convert.ToInt16(dt.Rows[0]["id_asignacion"]);
+                codigo = Convert.ToInt16(dt.Rows[0]["id_asignacionprecio"]);
             }
             return codigo;
         }
@@ -343,7 +346,7 @@ namespace ProyectoFinal
             if (venta)
             {
                 query = "SELECT id_asignacionprecio as Codigo, tipo_presentacion as Presentación, precio_venta as Precio from tblAsignacionPrecio as a INNER JOIN tblPresentacion as p on a.id_Presentacion=p.id_Presentacion";
-                query += " WHERE exists(SELECT * FROM tblAsignacionCantidad WHERE id_sucursal={0} AND id_asignacionprecio=a.id_asignacionprecio) AND id_producto='{1}';";
+                query += " WHERE exists(SELECT * FROM tblAsignacionCantidad WHERE id_sucursal={0} AND id_asignacionprecio=a.id_asignacionprecio AND cantidad>0) AND id_producto='{1}';";
                 query = string.Format(query, sucursal, lProductos.EditValue.ToString());
             }
             else
