@@ -24,7 +24,10 @@ namespace ProyectoFinal
         {
             Close();
         }
+        void ver()
+        {
 
+        }
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             login();

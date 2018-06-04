@@ -89,7 +89,7 @@
             this.simpleButton1.Name = "simpleButton1";
             this.simpleButton1.Size = new System.Drawing.Size(116, 42);
             this.simpleButton1.TabIndex = 5;
-            this.simpleButton1.Text = "Ingresar";
+            this.simpleButton1.Text = "Ingresar Al Programa";
             this.simpleButton1.Click += new System.EventHandler(this.simpleButton1_Click);
             // 
             // simpleButton2
