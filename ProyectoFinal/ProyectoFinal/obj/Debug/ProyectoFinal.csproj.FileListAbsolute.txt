@@ -706,3 +706,5 @@ C:\Users\satigo\Source\Repos\SURTICASA2\ProyectoFinal\ProyectoFinal\obj\Debug\Pr
 C:\Users\satigo\Source\Repos\SURTICASA2\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.frmProdyPres.resources
 C:\Users\satigo\Source\Repos\SURTICASA2\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.frmReimpresion.resources
 C:\Users\satigo\Source\Repos\SURTICASA2\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.frmVentasClienteEmpleado.resources
+C:\Users\satigo\Source\Repos\SURTICASA2\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.reporteVentasClieneEmpleado.resources
+C:\Users\satigo\Source\Repos\SURTICASA2\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.reporteEmpleado.resources

@@ -443,6 +443,24 @@
     <Compile Include="ProductosVenta.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="reporteEmpleado.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reporteEmpleado.Designer.cs">
+      <DependentUpon>reporteEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reporteMenosVendidos.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reporteMenosVendidos.Designer.cs">
+      <DependentUpon>reporteMenosVendidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reporteVentasClieneEmpleado.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reporteVentasClieneEmpleado.Designer.cs">
+      <DependentUpon>reporteVentasClieneEmpleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="top10Report.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -658,6 +676,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="reporteEmpleado.resx">
+      <DependentUpon>reporteEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reporteVentasClieneEmpleado.resx">
+      <DependentUpon>reporteVentasClieneEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="top10Report.resx">
       <DependentUpon>top10Report.cs</DependentUpon>
     </EmbeddedResource>
