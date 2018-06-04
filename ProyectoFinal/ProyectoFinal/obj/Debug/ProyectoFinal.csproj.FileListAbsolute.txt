@@ -947,3 +947,7 @@ C:\Users\LordPablo\Source\Repos\SURTICASA\ProyectoFinal\ProyectoFinal\obj\Debug\
 C:\Users\LordPablo\Source\Repos\SURTICASA\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.frmReimpresion.resources
 C:\Users\LordPablo\Source\Repos\SURTICASA\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.frmVentasClienteEmpleado.resources
 C:\Users\LordPablo\Source\Repos\SURTICASA\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.exe.licenses
+C:\Users\satigo\Source\Repos\SURTICASA2\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.reporteEmpleado.resources
+C:\Users\satigo\Source\Repos\SURTICASA2\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.reporteVentasClieneEmpleado.resources
+C:\Users\satigo\Source\Repos\SURTICASA2\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.reporteComprasProveedores.resources
+C:\Users\satigo\Source\Repos\SURTICASA2\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.reporteComprasFechas.resources
