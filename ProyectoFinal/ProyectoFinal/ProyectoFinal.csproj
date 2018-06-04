@@ -461,6 +461,12 @@
     <Compile Include="reporteComprasProveedores.Designer.cs">
       <DependentUpon>reporteComprasProveedores.cs</DependentUpon>
     </Compile>
+    <Compile Include="reporteCuentasxCobrar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reporteCuentasxCobrar.Designer.cs">
+      <DependentUpon>reporteCuentasxCobrar.cs</DependentUpon>
+    </Compile>
     <Compile Include="reporteEmpleado.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -708,6 +714,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="reporteComprasProveedores.resx">
       <DependentUpon>reporteComprasProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reporteCuentasxCobrar.resx">
+      <DependentUpon>reporteCuentasxCobrar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="reporteEmpleado.resx">
       <DependentUpon>reporteEmpleado.cs</DependentUpon>
