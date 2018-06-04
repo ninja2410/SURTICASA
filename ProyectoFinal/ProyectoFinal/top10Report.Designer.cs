@@ -69,18 +69,22 @@
             // 
             this.Detail.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.xrTable2});
-            this.Detail.HeightF = 61.12501F;
+            this.Detail.HeightF = 25F;
             this.Detail.Name = "Detail";
             this.Detail.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
             this.Detail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
             // xrTable2
             // 
+            this.xrTable2.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
+            | DevExpress.XtraPrinting.BorderSide.Right) 
+            | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTable2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 0F);
             this.xrTable2.Name = "xrTable2";
             this.xrTable2.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow2});
             this.xrTable2.SizeF = new System.Drawing.SizeF(650F, 25F);
+            this.xrTable2.StylePriority.UseBorders = false;
             // 
             // xrTableRow2
             // 
@@ -163,14 +167,14 @@
             xyDiagram1.DefaultPane.EnableAxisYScrolling = DevExpress.Utils.DefaultBoolean.False;
             xyDiagram1.DefaultPane.EnableAxisYZooming = DevExpress.Utils.DefaultBoolean.False;
             this.xrChart1.Diagram = xyDiagram1;
-            this.xrChart1.LocationFloat = new DevExpress.Utils.PointFloat(28.125F, 64.99999F);
+            this.xrChart1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 64.99999F);
             this.xrChart1.Name = "xrChart1";
             series1.ArgumentDataMember = "top10sales.Nombre Producto";
             series1.Name = "Serie1";
             series1.ValueDataMembersSerializable = "top10sales.Cantidad";
             this.xrChart1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series1};
-            this.xrChart1.SizeF = new System.Drawing.SizeF(600.4167F, 164.5833F);
+            this.xrChart1.SizeF = new System.Drawing.SizeF(650F, 164.5833F);
             // 
             // bottomMarginBand1
             // 
@@ -190,7 +194,7 @@
             // 
             this.xrLabel1.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Bold);
             this.xrLabel1.ForeColor = System.Drawing.Color.Teal;
-            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(28.125F, 10.00001F);
+            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(78.125F, 10.00001F);
             this.xrLabel1.Name = "xrLabel1";
             this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
             this.xrLabel1.SizeF = new System.Drawing.SizeF(495.8333F, 54.99998F);

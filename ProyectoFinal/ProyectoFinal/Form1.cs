@@ -320,9 +320,9 @@ namespace ProyectoFinal
         private void btnTop10Sales_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
-            frmPrintReport miReporte = new frmPrintReport();
-            miReporte.PrintReportTop10();
-            miReporte.Show();
+            XtraFormTop10Ventas miForm = new XtraFormTop10Ventas();
+            miForm.MdiParent = this;
+            miForm.Show();
         }
 
         private void btnAgregarPresentacion_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -568,6 +568,77 @@ namespace ProyectoFinal
             f_traslados traslados = new f_traslados();
             traslados.MdiParent = this;
             traslados.Show();
+        }
+
+        private void btnProdVencidos_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmProdVencidos miFrmVencidos = new frmProdVencidos();
+            miFrmVencidos.MdiParent = this;
+            miFrmVencidos.Show();
+        }
+
+        private void btnMenosVendidos_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmMenosVendidos miForm = new frmMenosVendidos();
+            miForm.MdiParent = this;
+            miForm.Show();
+        }
+
+        private void btnKardex_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmKardexProduct mifrmKardex = new frmKardexProduct();
+            mifrmKardex.MdiParent = this;
+            mifrmKardex.Show();
+        }
+
+        private void btnProductosyPresentaciones_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmProdyPres miFrmProdPres = new frmProdyPres();
+            miFrmProdPres.MdiParent = this;
+            miFrmProdPres.Show();
+        }
+
+        private void btnVentasyCliente_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmVentasClienteEmpleado miFrmVentasClienteEmpleado = new frmVentasClienteEmpleado();
+            miFrmVentasClienteEmpleado.MdiParent = this;
+            miFrmVentasClienteEmpleado.Show();
+        }
+
+        private void btnComprasyFechas_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmComprasProvFecha miFrmComprasporFechayProv = new frmComprasProvFecha();
+            miFrmComprasporFechayProv.MdiParent = this;
+            miFrmComprasporFechayProv.Show();
+
+        }
+
+        private void btnVentasyTraslados_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmReimpresion miFrmReimpresion = new frmReimpresion();
+            miFrmReimpresion.MdiParent = this;
+            miFrmReimpresion.Show();
+        }
+
+        private void btnClientesMorosos_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmClientesMorosos miFrmMorosos = new frmClientesMorosos();
+            miFrmMorosos.MdiParent = this;
+            miFrmMorosos.Show();
+        }
+
+        private void btnCuentaxCobrar_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmCuentasxCobrar miFrmCobrar = new frmCuentasxCobrar();
+            miFrmCobrar.MdiParent = this;
+            miFrmCobrar.Show();
+        }
+
+        private void btnCatalogoProductos_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmCatalogo miFrmCatalogo = new frmCatalogo();
+            miFrmCatalogo.MdiParent = this;
+            miFrmCatalogo.Show();
         }
     }
 }

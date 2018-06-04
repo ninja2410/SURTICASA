@@ -123,11 +123,35 @@
     <Compile Include="frmAsignProducts.Designer.cs">
       <DependentUpon>frmAsignProducts.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCatalogo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCatalogo.Designer.cs">
+      <DependentUpon>frmCatalogo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmClientes.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmClientes.Designer.cs">
       <DependentUpon>frmClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmClientesMorosos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmClientesMorosos.Designer.cs">
+      <DependentUpon>frmClientesMorosos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmComprasProvFecha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmComprasProvFecha.Designer.cs">
+      <DependentUpon>frmComprasProvFecha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCuentasxCobrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCuentasxCobrar.Designer.cs">
+      <DependentUpon>frmCuentasxCobrar.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDelAsignacionprecio.cs">
       <SubType>Form</SubType>
@@ -170,6 +194,18 @@
     </Compile>
     <Compile Include="frmdelsucursal.Designer.cs">
       <DependentUpon>frmdelsucursal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmKardexProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmKardexProduct.Designer.cs">
+      <DependentUpon>frmKardexProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmMenosVendidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMenosVendidos.Designer.cs">
+      <DependentUpon>frmMenosVendidos.cs</DependentUpon>
     </Compile>
     <Compile Include="frmModificarAsignacion.cs">
       <SubType>Form</SubType>
@@ -219,11 +255,29 @@
     <Compile Include="frmPrintReport.Designer.cs">
       <DependentUpon>frmPrintReport.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmProdVencidos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProdVencidos.Designer.cs">
+      <DependentUpon>frmProdVencidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmProdyPres.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmProdyPres.Designer.cs">
+      <DependentUpon>frmProdyPres.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmProviders.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmProviders.Designer.cs">
       <DependentUpon>frmProviders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReimpresion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReimpresion.Designer.cs">
+      <DependentUpon>frmReimpresion.cs</DependentUpon>
     </Compile>
     <Compile Include="frmUpdateAsignacion.cs">
       <SubType>Form</SubType>
@@ -260,6 +314,12 @@
     </Compile>
     <Compile Include="frmupdatesucursal.Designer.cs">
       <DependentUpon>frmupdatesucursal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVentasClienteEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVentasClienteEmpleado.Designer.cs">
+      <DependentUpon>frmVentasClienteEmpleado.cs</DependentUpon>
     </Compile>
     <Compile Include="frmVentascs.cs">
       <SubType>Form</SubType>
@@ -428,8 +488,20 @@
     <EmbeddedResource Include="frmAsignProducts.resx">
       <DependentUpon>frmAsignProducts.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCatalogo.resx">
+      <DependentUpon>frmCatalogo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmClientes.resx">
       <DependentUpon>frmClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmClientesMorosos.resx">
+      <DependentUpon>frmClientesMorosos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmComprasProvFecha.resx">
+      <DependentUpon>frmComprasProvFecha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCuentasxCobrar.resx">
+      <DependentUpon>frmCuentasxCobrar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDelAsignacionprecio.resx">
       <DependentUpon>frmDelAsignacionprecio.cs</DependentUpon>
@@ -451,6 +523,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmdelsucursal.resx">
       <DependentUpon>frmdelsucursal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmKardexProduct.resx">
+      <DependentUpon>frmKardexProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMenosVendidos.resx">
+      <DependentUpon>frmMenosVendidos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmModificarAsignacion.resx">
       <DependentUpon>frmModificarAsignacion.cs</DependentUpon>
@@ -476,8 +554,17 @@
     <EmbeddedResource Include="frmPrintReport.resx">
       <DependentUpon>frmPrintReport.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmProdVencidos.resx">
+      <DependentUpon>frmProdVencidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmProdyPres.resx">
+      <DependentUpon>frmProdyPres.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmProviders.resx">
       <DependentUpon>frmProviders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReimpresion.resx">
+      <DependentUpon>frmReimpresion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUpdateAsignacion.resx">
       <DependentUpon>frmUpdateAsignacion.cs</DependentUpon>
@@ -496,6 +583,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmupdatesucursal.resx">
       <DependentUpon>frmupdatesucursal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVentasClienteEmpleado.resx">
+      <DependentUpon>frmVentasClienteEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVentascs.resx">
       <DependentUpon>frmVentascs.cs</DependentUpon>
