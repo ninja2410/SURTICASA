@@ -951,3 +951,4 @@ C:\Users\satigo\Source\Repos\SURTICASA2\ProyectoFinal\ProyectoFinal\obj\Debug\Pr
 C:\Users\satigo\Source\Repos\SURTICASA2\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.reporteVentasClieneEmpleado.resources
 C:\Users\satigo\Source\Repos\SURTICASA2\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.reporteComprasProveedores.resources
 C:\Users\satigo\Source\Repos\SURTICASA2\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.reporteComprasFechas.resources
+C:\Users\satigo\Source\Repos\SURTICASA2\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.reporteProductosVencidos.resources
