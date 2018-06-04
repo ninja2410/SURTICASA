@@ -36,7 +36,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(631, 408);
             this.Name = "frmProdyPres";
-            this.Text = "frmProdyPres";
+            this.Text = "Reporte Productos y sus Presentaciones";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
 
