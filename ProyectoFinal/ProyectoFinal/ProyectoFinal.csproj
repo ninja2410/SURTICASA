@@ -443,6 +443,12 @@
     <Compile Include="ProductosVenta.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="reporteClientesMorosos.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reporteClientesMorosos.Designer.cs">
+      <DependentUpon>reporteClientesMorosos.cs</DependentUpon>
+    </Compile>
     <Compile Include="reporteComprasFechas.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -694,6 +700,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="reporteClientesMorosos.resx">
+      <DependentUpon>reporteClientesMorosos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="reporteComprasFechas.resx">
       <DependentUpon>reporteComprasFechas.cs</DependentUpon>
     </EmbeddedResource>
