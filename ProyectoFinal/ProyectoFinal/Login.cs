@@ -51,7 +51,7 @@ namespace ProyectoFinal
                 throw new Exception("Error en Login: " + ex.Message);
             }
 
-            if (dt.Rows[0]["id_empleado"].ToString()=="")
+            if (dt.Rows.Count==0)
             {
                 MessageBox.Show("El usuario o la contraseña son incorrectos");
             }
