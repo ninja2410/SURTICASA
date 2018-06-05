@@ -31,5 +31,12 @@ namespace ProyectoFinal
         {
             cargar();
         }
+
+        private void gridControl1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            verfoto a = new verfoto();
+            a.a = gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "Direccion Portada").ToString() ;
+            a.ShowDialog();
+        }
     }
 }
