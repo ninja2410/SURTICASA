@@ -566,6 +566,8 @@ namespace ProyectoFinal
         private void btnTrasladosBod_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             f_traslados traslados = new f_traslados();
+            traslados.empleado_id = codEmpleado;
+            traslados.sucursal_id = codSucursal;
             traslados.MdiParent = this;
             traslados.Show();
         }
