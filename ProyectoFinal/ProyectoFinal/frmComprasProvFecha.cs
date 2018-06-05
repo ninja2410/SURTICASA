@@ -18,17 +18,17 @@ namespace ProyectoFinal
         {
             InitializeComponent();
         }
-        void initData(int value)
-        {
-            if (value == 1)
-            { //CARGAMOS LOS PROVEEDORES DE LAS COMPRAS REALIZADAS
-                gridLookUpEdit1.Properties.View.Columns.Clear();
-                gridLookUpEdit1.Properties.DataSource = da.fillDataTable("select tblCompra.id_proveedor, tblProveedor.nombre_proveedor from tblCompra INNER JOIN tblProveedor ON tblCompra.id_proveedor = tblProveedor.id_proveedor group by id_proveedor");
-                gridLookUpEdit1.Properties.ValueMember = "id_proveedor";
-                gridLookUpEdit1.Properties.DisplayMember = "nombre_proveedor";
+            void initData(int value)
+            {
+                if (value == 1)
+                { //CARGAMOS LOS PROVEEDORES DE LAS COMPRAS REALIZADAS
+                    gridLookUpEdit1.Properties.View.Columns.Clear();
+                    gridLookUpEdit1.Properties.DataSource = da.fillDataTable("select tblCompra.id_proveedor, tblProveedor.nombre_proveedor from tblCompra INNER JOIN tblProveedor ON tblCompra.id_proveedor = tblProveedor.id_proveedor group by id_proveedor");
+                    gridLookUpEdit1.Properties.ValueMember = "id_proveedor";
+                    gridLookUpEdit1.Properties.DisplayMember = "nombre_proveedor";
+                }
+                else { }
             }
-            else { }
-        }
         private void frmComprasProvFecha_Load(object sender, EventArgs e)
         {
             //cargamos los Proveedores por DEFAULT

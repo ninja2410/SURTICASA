@@ -473,6 +473,12 @@
     <Compile Include="reporteEmpleado.Designer.cs">
       <DependentUpon>reporteEmpleado.cs</DependentUpon>
     </Compile>
+    <Compile Include="reporteKardex.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reporteKardex.Designer.cs">
+      <DependentUpon>reporteKardex.cs</DependentUpon>
+    </Compile>
     <Compile Include="reporteMenosVendidos.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -720,6 +726,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="reporteEmpleado.resx">
       <DependentUpon>reporteEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reporteKardex.resx">
+      <DependentUpon>reporteKardex.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="reporteMenosVendidos.resx">
       <DependentUpon>reporteMenosVendidos.cs</DependentUpon>
