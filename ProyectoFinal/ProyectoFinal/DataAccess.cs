@@ -144,7 +144,7 @@ namespace ProyectoFinal
                 foreach (DataRow r in detalles.Rows)
                 {
                     x = "";
-                    x = "INSERT INTO tblDetallesVenta(id_asignacion, id_venta, cantidad, precio, total) ";
+                    x = "INSERT INTO tblDetallesVenta(id_asignacionprecio, id_venta, cantidad, precio, total) ";
                     x += "VALUES({0},{1},{2},{3},{4})";
                     x = string.Format(x,Convert.ToInt16(r["Codigo"]), Convert.ToInt16(tmp.Rows[0]["Cod"]),
                         Convert.ToInt16(r["Cantidad"]), Convert.ToDecimal(r["Precio/U"]), Convert.ToDecimal(r["Total"]));

@@ -36,9 +36,11 @@
             DevExpress.DataAccess.Sql.ColumnInfo columnInfo1 = new DevExpress.DataAccess.Sql.ColumnInfo();
             DevExpress.DataAccess.Sql.ColumnInfo columnInfo2 = new DevExpress.DataAccess.Sql.ColumnInfo();
             DevExpress.DataAccess.Sql.ColumnInfo columnInfo3 = new DevExpress.DataAccess.Sql.ColumnInfo();
+            DevExpress.DataAccess.Sql.ColumnInfo columnInfo4 = new DevExpress.DataAccess.Sql.ColumnInfo();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(top10Report));
             DevExpress.XtraCharts.XYDiagram xyDiagram1 = new DevExpress.XtraCharts.XYDiagram();
             DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.ChartTitle chartTitle1 = new DevExpress.XtraCharts.ChartTitle();
             this.Detail = new DevExpress.XtraReports.UI.DetailBand();
             this.xrTable2 = new DevExpress.XtraReports.UI.XRTable();
             this.xrTableRow2 = new DevExpress.XtraReports.UI.XRTableRow();
@@ -58,6 +60,8 @@
             this.xrTableCell3 = new DevExpress.XtraReports.UI.XRTableCell();
             this.PageFooter = new DevExpress.XtraReports.UI.PageFooterBand();
             this.formattingRule1 = new DevExpress.XtraReports.UI.FormattingRule();
+            this.xrTableCell7 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrTableCell8 = new DevExpress.XtraReports.UI.XRTableCell();
             ((System.ComponentModel.ISupportInitialize)(this.xrTable2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xrChart1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(xyDiagram1)).BeginInit();
@@ -91,7 +95,8 @@
             this.xrTableRow2.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
             this.xrTableCell4,
             this.xrTableCell5,
-            this.xrTableCell6});
+            this.xrTableCell6,
+            this.xrTableCell8});
             this.xrTableRow2.Name = "xrTableRow2";
             this.xrTableRow2.Weight = 1D;
             // 
@@ -104,21 +109,21 @@
             new DevExpress.XtraReports.UI.XRBinding("Text", null, "top10sales.Sucursal")});
             this.xrTableCell4.Name = "xrTableCell4";
             this.xrTableCell4.StylePriority.UseBorders = false;
-            this.xrTableCell4.Weight = 0.94423093355618992D;
+            this.xrTableCell4.Weight = 0.64615410437950715D;
             // 
             // xrTableCell5
             // 
             this.xrTableCell5.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "top10sales.Nombre Producto")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "top10sales.Producto")});
             this.xrTableCell5.Name = "xrTableCell5";
-            this.xrTableCell5.Weight = 1.3153845919095555D;
+            this.xrTableCell5.Weight = 1.2288458486703728D;
             // 
             // xrTableCell6
             // 
             this.xrTableCell6.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
-            new DevExpress.XtraReports.UI.XRBinding("Text", null, "top10sales.Cantidad")});
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "top10sales.Presentacion")});
             this.xrTableCell6.Name = "xrTableCell6";
-            this.xrTableCell6.Weight = 0.74038447453425482D;
+            this.xrTableCell6.Weight = 0.59615483210637021D;
             // 
             // sqlDataSource1
             // 
@@ -129,21 +134,27 @@
             mySqlConnectionParameters1.UserName = "u983648979_loto";
             this.sqlDataSource1.ConnectionParameters = mySqlConnectionParameters1;
             this.sqlDataSource1.Name = "sqlDataSource1";
-            tableQuery1.FilterString = "[top10sales.Sucursal] = ?nameSucursal";
+            tableQuery1.FilterString = "StartsWith([top10sales.nombre_sucursal], ?sucursal)";
             tableQuery1.GroupFilterString = "";
             tableQuery1.Name = "top10sales";
-            queryParameter1.Name = "nameSucursal";
+            queryParameter1.Name = "sucursal";
             queryParameter1.Type = typeof(string);
             queryParameter1.ValueInfo = "CENTRAL";
             tableQuery1.Parameters.Add(queryParameter1);
             tableInfo1.Name = "top10sales";
-            columnInfo1.Name = "Sucursal";
-            columnInfo2.Name = "Nombre Producto";
-            columnInfo3.Name = "Cantidad";
+            columnInfo1.Alias = "Cantidad";
+            columnInfo1.Name = "Sum_cantidad";
+            columnInfo2.Alias = "Presentacion";
+            columnInfo2.Name = "tipo_presentacion";
+            columnInfo3.Alias = "Producto";
+            columnInfo3.Name = "nombre_producto";
+            columnInfo4.Alias = "Sucursal";
+            columnInfo4.Name = "nombre_sucursal";
             tableInfo1.SelectedColumns.AddRange(new DevExpress.DataAccess.Sql.ColumnInfo[] {
             columnInfo1,
             columnInfo2,
-            columnInfo3});
+            columnInfo3,
+            columnInfo4});
             tableQuery1.Tables.AddRange(new DevExpress.DataAccess.Sql.TableInfo[] {
             tableInfo1});
             tableQuery1.Top = 10;
@@ -169,12 +180,18 @@
             this.xrChart1.Diagram = xyDiagram1;
             this.xrChart1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 64.99999F);
             this.xrChart1.Name = "xrChart1";
+            this.xrChart1.SeriesDataMember = "top10sales.Sucursal";
             series1.ArgumentDataMember = "top10sales.Nombre Producto";
             series1.Name = "Serie1";
             series1.ValueDataMembersSerializable = "top10sales.Cantidad";
             this.xrChart1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series1};
+            this.xrChart1.SeriesTemplate.ArgumentDataMember = "top10sales.Producto";
+            this.xrChart1.SeriesTemplate.ValueDataMembersSerializable = "top10sales.Cantidad";
             this.xrChart1.SizeF = new System.Drawing.SizeF(650F, 164.5833F);
+            chartTitle1.Text = "Productos mas Vendidos";
+            this.xrChart1.Titles.AddRange(new DevExpress.XtraCharts.ChartTitle[] {
+            chartTitle1});
             // 
             // bottomMarginBand1
             // 
@@ -204,18 +221,23 @@
             // 
             // xrTable1
             // 
+            this.xrTable1.Borders = ((DevExpress.XtraPrinting.BorderSide)((((DevExpress.XtraPrinting.BorderSide.Left | DevExpress.XtraPrinting.BorderSide.Top) 
+            | DevExpress.XtraPrinting.BorderSide.Right) 
+            | DevExpress.XtraPrinting.BorderSide.Bottom)));
             this.xrTable1.LocationFloat = new DevExpress.Utils.PointFloat(0F, 247.9167F);
             this.xrTable1.Name = "xrTable1";
             this.xrTable1.Rows.AddRange(new DevExpress.XtraReports.UI.XRTableRow[] {
             this.xrTableRow1});
-            this.xrTable1.SizeF = new System.Drawing.SizeF(650.0001F, 25.00002F);
+            this.xrTable1.SizeF = new System.Drawing.SizeF(650F, 25.00002F);
+            this.xrTable1.StylePriority.UseBorders = false;
             // 
             // xrTableRow1
             // 
             this.xrTableRow1.Cells.AddRange(new DevExpress.XtraReports.UI.XRTableCell[] {
             this.xrTableCell1,
             this.xrTableCell2,
-            this.xrTableCell3});
+            this.xrTableCell3,
+            this.xrTableCell7});
             this.xrTableRow1.Name = "xrTableRow1";
             this.xrTableRow1.Weight = 1D;
             // 
@@ -225,7 +247,7 @@
             this.xrTableCell1.Name = "xrTableCell1";
             this.xrTableCell1.StylePriority.UseFont = false;
             this.xrTableCell1.Text = "SUCURSAL";
-            this.xrTableCell1.Weight = 0.94423086836774428D;
+            this.xrTableCell1.Weight = 0.64615402474485584D;
             // 
             // xrTableCell2
             // 
@@ -233,15 +255,15 @@
             this.xrTableCell2.Name = "xrTableCell2";
             this.xrTableCell2.StylePriority.UseFont = false;
             this.xrTableCell2.Text = "NOMBRE DEL PRODUCTO";
-            this.xrTableCell2.Weight = 1.3153844214445216D;
+            this.xrTableCell2.Weight = 1.2288458353076877D;
             // 
             // xrTableCell3
             // 
             this.xrTableCell3.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
             this.xrTableCell3.Name = "xrTableCell3";
             this.xrTableCell3.StylePriority.UseFont = false;
-            this.xrTableCell3.Text = "CANTIDAD";
-            this.xrTableCell3.Weight = 0.74038471018773389D;
+            this.xrTableCell3.Text = "PRESENTACION";
+            this.xrTableCell3.Weight = 0.59615432016940262D;
             // 
             // PageFooter
             // 
@@ -251,6 +273,21 @@
             // formattingRule1
             // 
             this.formattingRule1.Name = "formattingRule1";
+            // 
+            // xrTableCell7
+            // 
+            this.xrTableCell7.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold);
+            this.xrTableCell7.Name = "xrTableCell7";
+            this.xrTableCell7.StylePriority.UseFont = false;
+            this.xrTableCell7.Text = "CANTIDAD";
+            this.xrTableCell7.Weight = 0.52884504885439809D;
+            // 
+            // xrTableCell8
+            // 
+            this.xrTableCell8.DataBindings.AddRange(new DevExpress.XtraReports.UI.XRBinding[] {
+            new DevExpress.XtraReports.UI.XRBinding("Text", null, "top10sales.Cantidad")});
+            this.xrTableCell8.Name = "xrTableCell8";
+            this.xrTableCell8.Weight = 0.52884526076358873D;
             // 
             // top10Report
             // 
@@ -298,5 +335,7 @@
         private DevExpress.XtraReports.UI.XRTableCell xrTableCell3;
         private DevExpress.XtraReports.UI.PageFooterBand PageFooter;
         private DevExpress.XtraReports.UI.FormattingRule formattingRule1;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell8;
+        private DevExpress.XtraReports.UI.XRTableCell xrTableCell7;
     }
 }

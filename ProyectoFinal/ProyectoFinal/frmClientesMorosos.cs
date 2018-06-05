@@ -17,5 +17,13 @@ namespace ProyectoFinal
         {
             InitializeComponent();
         }
+
+        private void frmClientesMorosos_Load(object sender, EventArgs e)
+        {
+            reporteClientesMorosos miReporte = new reporteClientesMorosos();            
+            documentViewer1.DocumentSource = miReporte;
+            miReporte.InitData(DateTime.Now);
+            miReporte.CreateDocument();
+        }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraReports.UI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -136,7 +137,9 @@ namespace ProyectoFinal
                         string query = "CALL SP_UPDATECAJA({0},{1})"; //Actualizamos la cantidad de caja
                         query = string.Format(query, idCaja, totalFactura);
                         da.executeCommand(query);
-
+                        DataTable tmp = new DataTable();
+                        query = "select MAX(id_venta) as cod from tblVenta";
+                        tmp = da.fillDataTable(query);
                         if (chkCredito.Checked == true)
                         {
                             //int idCliente = Convert.ToInt16(lCliente.EditValue);
@@ -150,8 +153,11 @@ namespace ProyectoFinal
                             MessageBox.Show("Se ha generado el credito con exito");
                             // el 1 significa que es VENTA
                         }
+                        imprimirFactura(Convert.ToInt16(tmp.Rows[0]["cod"]));
                     }
-                    MessageBox.Show("Registrado con Exito");
+
+                    
+
 
                     txtCantidad.Text = "";
                     txtDocumento.Text = "";
@@ -171,6 +177,37 @@ namespace ProyectoFinal
                 }
 
             }
+        }
+        private void imprimirFactura(int codFactura)
+        {
+            MessageBox.Show("Factura Generada con Exito");
+            string squery;
+            DataTable encabezado = new DataTable();
+            DataTable detalles = new DataTable();
+            squery = "SELECT id_venta as n, fecha, documento, c.nombre as cliente, s.nombre_sucursal as sucursal, ";
+            squery += " e.nombre as empleado, total, c.nit as nit FROM tblVenta as v inner ";
+            squery += "join tblCliente as c on v.id_cliente=c.id_cliente inner join tblSucursal as s on ";
+            squery += "v.id_sucursal=s.id_sucursal inner join tblEmpleado as e on e.id_empleado=v.id_empleado ";
+            squery += " where id_venta={0}";
+            squery = string.Format(squery, codFactura);
+            encabezado = da.fillDataTable(squery);
+            squery = "select cantidad, p.nombre_producto as nombre, precio, total from tblDetallesVenta as";
+            squery += " d inner join tblAsignacionPrecio as ap on";
+            squery += " d.id_asignacionprecio=ap.id_asignacionprecio inner join tblProducto as p on ";
+            squery += "ap.id_producto=p.id_producto where id_venta={0}";
+            squery = string.Format(squery, codFactura);
+            detalles = da.fillDataTable(squery);
+            FACTURA factura = new FACTURA();
+            factura.lblCliente.Text = encabezado.Rows[0]["cliente"].ToString();
+            factura.lblNumero.Text = encabezado.Rows[0]["documento"].ToString();
+            factura.lblFecha.Text = encabezado.Rows[0]["fecha"].ToString();
+            factura.lblSucursal.Text ="Sucursal:  "+ encabezado.Rows[0]["sucursal"].ToString();
+            factura.lblEmpleado.Text = "Le Atendio: "+encabezado.Rows[0]["empleado"].ToString();
+            factura.lblTotal.Text = "Q." + encabezado.Rows[0]["total"].ToString();
+            factura.lblNit.Text = encabezado.Rows[0]["nit"].ToString();
+            factura.lblArticulos.Text = detalles.Rows.Count.ToString();
+            factura.DataSource = detalles;
+            factura.ShowPreview();
         }
         private bool verificar()
         {
@@ -281,21 +318,24 @@ namespace ProyectoFinal
             DataTable dt = new DataTable();
             DataTable tmp = new DataTable();
 
-            q = "SELECT SUM(cantidad) as n from tblAsignacionCantidad WHERE id_asignacionprecio={0} AND id_sucursal={1}";
+            q = "SELECT SUM(cantidad) as n from tblAsignacionCantidad WHERE id_asignacionprecio={0} AND id_sucursal={1} and cantidad>0";
             q = string.Format(q, cod, sucursal);
             tmp = da.fillDataTable(q);
-            MessageBox.Show(tmp.Rows[0]["n"].ToString());
+            if (tmp.Rows[0]["n"].ToString()=="")
+            {
+                return -1;
+            }
             if (Convert.ToInt16(tmp.Rows[0]["n"]) < Convert.ToInt16(txtCantidad.Text))
             {
                 codigo = -1;
             }
             else
             {
-                q = "SELECT id_asignacion, fecha_caducidad from tblAsignacionCantidad where id_asignacionprecio={0} and id_sucursal={1} AND cantidad>0";
+                q = "SELECT id_asignacionprecio, fecha_caducidad from tblAsignacionCantidad where id_asignacionprecio={0} and id_sucursal={1} AND cantidad>0";
                 q += " ORDER BY fecha_caducidad ASC";
                 q = string.Format(q, cod, sucursal);
                 dt = da.fillDataTable(q);
-                codigo = Convert.ToInt16(dt.Rows[0]["id_asignacion"]);
+                codigo = Convert.ToInt16(dt.Rows[0]["id_asignacionprecio"]);
             }
             return codigo;
         }
@@ -343,7 +383,7 @@ namespace ProyectoFinal
             if (venta)
             {
                 query = "SELECT id_asignacionprecio as Codigo, tipo_presentacion as Presentación, precio_venta as Precio from tblAsignacionPrecio as a INNER JOIN tblPresentacion as p on a.id_Presentacion=p.id_Presentacion";
-                query += " WHERE exists(SELECT * FROM tblAsignacionCantidad WHERE id_sucursal={0} AND id_asignacionprecio=a.id_asignacionprecio) AND id_producto='{1}';";
+                query += " WHERE exists(SELECT * FROM tblAsignacionCantidad WHERE id_sucursal={0} AND id_asignacionprecio=a.id_asignacionprecio AND cantidad>0) AND id_producto='{1}';";
                 query = string.Format(query, sucursal, lProductos.EditValue.ToString());
             }
             else
