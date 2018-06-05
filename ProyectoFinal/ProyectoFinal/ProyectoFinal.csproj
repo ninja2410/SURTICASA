@@ -508,6 +508,12 @@
     <Compile Include="reporteProdyPres.Designer.cs">
       <DependentUpon>reporteProdyPres.cs</DependentUpon>
     </Compile>
+    <Compile Include="reporteTraslado.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reporteTraslado.Designer.cs">
+      <DependentUpon>reporteTraslado.cs</DependentUpon>
+    </Compile>
     <Compile Include="reporteVentasClieneEmpleado.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -758,6 +764,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="reporteProdyPres.resx">
       <DependentUpon>reporteProdyPres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reporteTraslado.resx">
+      <DependentUpon>reporteTraslado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="reporteVentasClieneEmpleado.resx">
       <DependentUpon>reporteVentasClieneEmpleado.cs</DependentUpon>
