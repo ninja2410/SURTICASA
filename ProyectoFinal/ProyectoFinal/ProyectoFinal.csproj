@@ -93,6 +93,17 @@
     </Compile>
     <Compile Include="ClassCaja.cs" />
     <Compile Include="DataAccess.cs" />
+    <Compile Include="dsFactura.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsFactura.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FACTURA.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="FACTURA.Designer.cs">
+      <DependentUpon>FACTURA.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -521,6 +532,9 @@
     <EmbeddedResource Include="agregarpresentacion.resx">
       <DependentUpon>agregarpresentacion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FACTURA.resx">
+      <DependentUpon>FACTURA.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -740,6 +754,17 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>XtraReportVentas2.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="dsFactura.xsc">
+      <DependentUpon>dsFactura.xsd</DependentUpon>
+    </None>
+    <None Include="dsFactura.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsFactura.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsFactura.xss">
+      <DependentUpon>dsFactura.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

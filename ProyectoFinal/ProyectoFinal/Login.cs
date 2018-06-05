@@ -64,6 +64,8 @@ namespace ProyectoFinal
                 inicio.sucursal = dt.Rows[0]["nombre_sucursal"].ToString();
                 inicio.empleado = dt.Rows[0]["nombre"].ToString();
                 inicio.anterior = this;
+                textEdit1.Text = "";
+                textEdit2.Text = "";
                 inicio.Show();
                 bandera = true;
             }

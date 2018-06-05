@@ -963,3 +963,4 @@ C:\Users\LordPablo\Source\Repos\SURTICASA\ProyectoFinal\ProyectoFinal\obj\Debug\
 C:\Users\LordPablo\Source\Repos\SURTICASA\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.reporteMenosVendidos.resources
 C:\Users\LordPablo\Source\Repos\SURTICASA\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.reporteProductosVencidos.resources
 C:\Users\LordPablo\Source\Repos\SURTICASA\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.reporteVentasClieneEmpleado.resources
+C:\Users\LordPablo\Source\Repos\SURTICASA\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.FACTURA.resources
