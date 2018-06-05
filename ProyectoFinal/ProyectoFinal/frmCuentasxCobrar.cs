@@ -17,5 +17,14 @@ namespace ProyectoFinal
         {
             InitializeComponent();
         }
+
+        private void frmCuentasxCobrar_Load(object sender, EventArgs e)
+        {
+            reporteCuentasxCobrar miReporte = new reporteCuentasxCobrar();
+            documentViewer1.DocumentSource = miReporte;
+            miReporte.CreateDocument();
+            
+
+        }
     }
 }

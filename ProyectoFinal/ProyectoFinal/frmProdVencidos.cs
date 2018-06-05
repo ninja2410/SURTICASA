@@ -17,5 +17,13 @@ namespace ProyectoFinal
         {
             InitializeComponent();
         }
+
+        private void frmProdVencidos_Load(object sender, EventArgs e)
+        {
+            reporteProductosVencidos miReporte = new reporteProductosVencidos();
+            documentViewer1.DocumentSource = miReporte;
+            miReporte.InitData(DateTime.Today);
+            miReporte.CreateDocument();
+        }
     }
 }

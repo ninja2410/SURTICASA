@@ -443,6 +443,54 @@
     <Compile Include="ProductosVenta.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="reporteClientesMorosos.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reporteClientesMorosos.Designer.cs">
+      <DependentUpon>reporteClientesMorosos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reporteComprasFechas.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reporteComprasFechas.Designer.cs">
+      <DependentUpon>reporteComprasFechas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reporteComprasProveedores.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reporteComprasProveedores.Designer.cs">
+      <DependentUpon>reporteComprasProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reporteCuentasxCobrar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reporteCuentasxCobrar.Designer.cs">
+      <DependentUpon>reporteCuentasxCobrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reporteEmpleado.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reporteEmpleado.Designer.cs">
+      <DependentUpon>reporteEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reporteMenosVendidos.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reporteMenosVendidos.Designer.cs">
+      <DependentUpon>reporteMenosVendidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reporteProductosVencidos.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reporteProductosVencidos.Designer.cs">
+      <DependentUpon>reporteProductosVencidos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="reporteVentasClieneEmpleado.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="reporteVentasClieneEmpleado.Designer.cs">
+      <DependentUpon>reporteVentasClieneEmpleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="top10Report.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -658,6 +706,30 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="reporteClientesMorosos.resx">
+      <DependentUpon>reporteClientesMorosos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reporteComprasFechas.resx">
+      <DependentUpon>reporteComprasFechas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reporteComprasProveedores.resx">
+      <DependentUpon>reporteComprasProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reporteCuentasxCobrar.resx">
+      <DependentUpon>reporteCuentasxCobrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reporteEmpleado.resx">
+      <DependentUpon>reporteEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reporteMenosVendidos.resx">
+      <DependentUpon>reporteMenosVendidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reporteProductosVencidos.resx">
+      <DependentUpon>reporteProductosVencidos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="reporteVentasClieneEmpleado.resx">
+      <DependentUpon>reporteVentasClieneEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="top10Report.resx">
       <DependentUpon>top10Report.cs</DependentUpon>
     </EmbeddedResource>

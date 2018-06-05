@@ -48,13 +48,13 @@ namespace ProyectoFinal
 
         private void lProducto_EditValueChanged(object sender, EventArgs e)
         {
-            x = "SELECT id_asignacionprecio, tipo_presentacion ";
+            x = "SELECT a.id_Presentacion as cod, tipo_presentacion ";
             x+=" from tblAsignacionPrecio as a INNER JOIN tblPresentacion as b";
             x += " ON a.id_Presentacion=b.id_Presentacion WHERE id_producto='{0}'";
             x = string.Format(x, lProducto.EditValue.ToString());
             lPresentacion.Properties.DataSource = da.fillDataTable(x);
             lPresentacion.Properties.DisplayMember = "tipo_presentacion";
-            lPresentacion.Properties.ValueMember = "id_asignacionprecio";
+            lPresentacion.Properties.ValueMember = "cod";
         }
 
         private void simpleButton1_Click(object sender, EventArgs e)
