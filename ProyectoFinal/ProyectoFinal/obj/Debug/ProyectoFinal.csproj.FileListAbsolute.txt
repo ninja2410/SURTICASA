@@ -955,4 +955,12 @@ C:\Users\satigo\Source\Repos\SURTICASA2\ProyectoFinal\ProyectoFinal\obj\Debug\Pr
 C:\Users\satigo\Source\Repos\SURTICASA2\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.reporteClientesMorosos.resources
 C:\Users\satigo\Source\Repos\SURTICASA2\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.reporteCuentasxCobrar.resources
 C:\Users\satigo\Source\Repos\SURTICASA2\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.reporteMenosVendidos.resources
-C:\Users\satigo\source\repos\SURTICASA2\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.reporteKardex.resources
+C:\Users\LordPablo\Source\Repos\SURTICASA\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.reporteClientesMorosos.resources
+C:\Users\LordPablo\Source\Repos\SURTICASA\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.reporteComprasFechas.resources
+C:\Users\LordPablo\Source\Repos\SURTICASA\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.reporteComprasProveedores.resources
+C:\Users\LordPablo\Source\Repos\SURTICASA\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.reporteCuentasxCobrar.resources
+C:\Users\LordPablo\Source\Repos\SURTICASA\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.reporteEmpleado.resources
+C:\Users\LordPablo\Source\Repos\SURTICASA\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.reporteMenosVendidos.resources
+C:\Users\LordPablo\Source\Repos\SURTICASA\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.reporteProductosVencidos.resources
+C:\Users\LordPablo\Source\Repos\SURTICASA\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.reporteVentasClieneEmpleado.resources
+C:\Users\LordPablo\Source\Repos\SURTICASA\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.FACTURA.resources
