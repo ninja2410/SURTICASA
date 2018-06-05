@@ -53,7 +53,7 @@ namespace ProyectoFinal
                     string nit = creditosGridView.GetRowCellValue(creditosGridView.FocusedRowHandle, "NIT").ToString();
                     monto = Convert.ToDecimal(creditosGridView.GetRowCellValue(creditosGridView.FocusedRowHandle, "MONTO"));
                     DateTime fecha = Convert.ToDateTime(creditosGridView.GetRowCellValue(creditosGridView.FocusedRowHandle, "FECHALIMITE"));
-                    lblCreditoDetail.Text = "Cliente: "+nombre+"/nMonto: "+monto;
+                    lblCreditoDetail.Text = "Cliente: "+nombre+"\nMonto: "+monto;
                 }
                 else
                 {
@@ -62,7 +62,7 @@ namespace ProyectoFinal
                     string nit = creditosGridView.GetRowCellValue(creditosGridView.FocusedRowHandle, "NIT").ToString();
                     monto = Convert.ToDecimal(creditosGridView.GetRowCellValue(creditosGridView.FocusedRowHandle, "MONTO").ToString());
                     DateTime fecha = Convert.ToDateTime(creditosGridView.GetRowCellValue(creditosGridView.FocusedRowHandle, "FECHALIMITE").ToString());
-                    lblCreditoDetail.Text = "Cliente: " + nombre + " /n Monto: " + monto;
+                    lblCreditoDetail.Text = "Cliente: " + nombre + "\nMonto: " + monto;
                 }
 
             }

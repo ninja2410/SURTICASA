@@ -13,6 +13,7 @@ namespace ProyectoFinal
     public partial class Login : Form
     {
         DataAccess da = new DataAccess();
+        DataAccessSQL sql_conn = new DataAccessSQL();
         public Form1 anterior;
         public bool bandera;
         public Login()
@@ -31,6 +32,7 @@ namespace ProyectoFinal
         private void simpleButton1_Click(object sender, EventArgs e)
         {
             login();
+
         }
 
         private void login()
@@ -57,15 +59,21 @@ namespace ProyectoFinal
             }
             else
             {
-                MessageBox.Show("Bienvenido al sistema");
+                //MessageBox.Show("Bienvenido al sistema");
+                string insertdb = "INSERT INTO log_usuarios(nombre,sucursal,hora_entrada) VALUES ('{0}','{1}', getdate());";
+                insertdb = string.Format(insertdb, dt.Rows[0]["nombre"].ToString(), dt.Rows[0]["nombre_sucursal"].ToString());
+                sql_conn.executeCommand(insertdb);
                 Form1 inicio = new Form1();
                 inicio.codEmpleado = Convert.ToInt16(dt.Rows[0]["id_empleado"]);
                 inicio.codSucursal = Convert.ToInt16(dt.Rows[0]["id_sucursal"]);
                 inicio.sucursal = dt.Rows[0]["nombre_sucursal"].ToString();
                 inicio.empleado = dt.Rows[0]["nombre"].ToString();
                 inicio.anterior = this;
+                textEdit1.Text = "";
+                textEdit2.Text = "";
                 inicio.Show();
                 bandera = true;
+
             }
         }
 

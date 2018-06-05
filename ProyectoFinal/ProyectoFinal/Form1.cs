@@ -21,6 +21,7 @@ namespace ProyectoFinal
         public string empleado;
         public string sucursal;
         public Login anterior=new Login();
+        DataAccessSQL sql_conn = new DataAccessSQL();
         public Form1()
         {
             InitializeComponent();
@@ -32,6 +33,8 @@ namespace ProyectoFinal
             v.MdiParent = this;
             v.sucursal = codSucursal;
             v.empleado = codEmpleado;
+            v.nombreEmpleado = empleado;
+            v.nombreSucursal = sucursal;
             v.venta = true;
             v.Show();
         }
@@ -51,6 +54,8 @@ namespace ProyectoFinal
             f_ventas c = new f_ventas();
             c.empleado = codEmpleado;
             c.sucursal = codSucursal;
+            c.nombreEmpleado = empleado;
+            c.nombreSucursal = sucursal;
             c.venta = false;
             c.MdiParent = this;
             c.Show();
@@ -127,6 +132,8 @@ namespace ProyectoFinal
         private void btnnewproducto_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmnewproducto a = new frmnewproducto();
+            a.nombreSucursal = sucursal;
+            a.nombreEmpleado = empleado;
             a.MdiParent = this;
             a.Show();
         }
@@ -141,6 +148,8 @@ namespace ProyectoFinal
         private void btnupdateproducto_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmupdateproducto a = new frmupdateproducto();
+            a.nombreEmpleado = empleado;
+            a.nombreSucursal = sucursal;
             a.MdiParent = this;
             a.Show();
         }
@@ -148,6 +157,8 @@ namespace ProyectoFinal
         private void btndelproducto_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             frmdelproducto a = new frmdelproducto();
+            a.nombreSucursal = sucursal;
+            a.nombreEmpleado = empleado;
             a.MdiParent = this;
             a.Show();
         }
@@ -277,7 +288,10 @@ namespace ProyectoFinal
 
         private void btnSalir_ItemClick_1(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            
+
+            string insertdb = "INSERT INTO log_usuarios(nombre,sucursal,hora_salida) VALUES ('{0}','{1}', getdate());";
+            insertdb = string.Format(insertdb,empleado, sucursal);
+            sql_conn.executeCommand(insertdb);
             anterior.anterior = this;
             anterior.bandera = true;
             anterior.recargar();
@@ -410,6 +424,7 @@ namespace ProyectoFinal
                 btnAbonoC.Enabled = true;
                 btnAbonoV.Enabled = true;
                 btnNewCaja.Enabled = false;
+                btnPedidos.Enabled = true;
 
                 MessageBox.Show("Caja aperturada correctamente.","Exito",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 
@@ -509,6 +524,7 @@ namespace ProyectoFinal
                 btnNewCompra.Enabled = false;                
                 btnAbonoC.Enabled = false;
                 btnAbonoV.Enabled = false;
+                btnPedidos.Enabled = false;
                 btnNewCaja.Enabled = true;
                 MessageBox.Show("Cierre de caja Correcto!","Exito",MessageBoxButtons.OK,MessageBoxIcon.Information);
 
@@ -566,6 +582,8 @@ namespace ProyectoFinal
         private void btnTrasladosBod_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             f_traslados traslados = new f_traslados();
+            traslados.empleado_id = codEmpleado;
+            traslados.sucursal_id = codSucursal;
             traslados.MdiParent = this;
             traslados.Show();
         }
@@ -639,6 +657,22 @@ namespace ProyectoFinal
             frmCatalogo miFrmCatalogo = new frmCatalogo();
             miFrmCatalogo.MdiParent = this;
             miFrmCatalogo.Show();
+        }
+
+        private void btnConfirmarTras_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            f_confirmarTraslados cT = new f_confirmarTraslados();
+            cT.sucursal_id = codSucursal;
+            cT.empleado_id = codEmpleado;
+            cT.MdiParent = this;
+            cT.Show();
+        }
+
+        private void btnPedidos_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmPedidos miFrm = new frmPedidos();
+            miFrm.MdiParent = this;
+            miFrm.Show();
         }
     }
 }

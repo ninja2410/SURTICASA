@@ -18,6 +18,9 @@ namespace ProyectoFinal
             InitializeComponent();
         }
         DataAccess da = new DataAccess();
+        DataAccessSQL sql_conn = new DataAccessSQL();
+        public string nombreEmpleado;
+        public string nombreSucursal;
         private void pictureEdit1_EditValueChanged(object sender, EventArgs e)
         {
 
@@ -113,7 +116,12 @@ namespace ProyectoFinal
                     sCommand = "insert into tblProducto(id_producto,nombre_producto,codigo_barras,activo,foto,descripcion,id_marca,id_categoria) ";
                     sCommand += "values('{0}','{1}','{2}',{3},'{4}','{5}','{6}','{7}')";
                     sCommand = string.Format(sCommand, codigo_pro, nombre, codigo, Convert.ToByte(activo),ruta, descripcion, marca,categoria);
-                if(presentacion)
+
+                    string insertdb = "INSERT INTO log_productos(id_producto,nombre,operacion,empleado,sucursal,fecha) ";
+                    insertdb += "VALUES ('{0}','{1}','Creacion producto','{2}',{3}, getdate());";
+                    insertdb = string.Format(insertdb, codigo_pro, nombre, nombreEmpleado,nombreSucursal);
+                    sql_conn.executeCommand(insertdb);
+                if (presentacion)
                     { 
                         sCommand1 = "insert into tblAsignacionPrecio(id_Presentacion,id_producto,precio_Venta,precio_Compra) ";
                         sCommand1 += "values('{0}','{1}','{2}','{3}')";

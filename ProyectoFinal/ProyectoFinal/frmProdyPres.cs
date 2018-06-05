@@ -17,5 +17,12 @@ namespace ProyectoFinal
         {
             InitializeComponent();
         }
+
+        private void frmProdyPres_Load(object sender, EventArgs e)
+        {
+            reporteProdyPres miReporte = new reporteProdyPres();
+            documentViewer1.DocumentSource = miReporte;
+            miReporte.CreateDocument();
+        }
     }
 }
