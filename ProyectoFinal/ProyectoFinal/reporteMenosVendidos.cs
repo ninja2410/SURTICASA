@@ -13,5 +13,11 @@ namespace ProyectoFinal
             InitializeComponent();
         }
 
+        public void InitData(string sucursal)
+        {
+            sqlDataSource1.Queries[0].Parameters[0].Value = sucursal;
+
+        }
+
     }
 }

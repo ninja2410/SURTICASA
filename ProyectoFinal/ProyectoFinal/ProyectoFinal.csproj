@@ -721,6 +721,9 @@
     <EmbeddedResource Include="reporteEmpleado.resx">
       <DependentUpon>reporteEmpleado.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="reporteMenosVendidos.resx">
+      <DependentUpon>reporteMenosVendidos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="reporteProductosVencidos.resx">
       <DependentUpon>reporteProductosVencidos.cs</DependentUpon>
     </EmbeddedResource>
