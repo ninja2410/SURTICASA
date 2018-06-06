@@ -14,6 +14,7 @@ namespace ProyectoFinal
     public partial class f_ventas : Form
     {
         DataAccess da = new DataAccess();
+        DataAccessSQL sql_conn = new DataAccessSQL();
         DataTable dt = new DataTable();
         DataTable tmp = new DataTable();
         List<ProductosVenta> lista = new List<ProductosVenta>();
@@ -22,6 +23,8 @@ namespace ProyectoFinal
         decimal totalFactura;
         public bool venta=true;
         public int empleado;
+        public string nombreEmpleado;
+        public string nombreSucursal;
         int codigoProveedor;
         int codigoCliente;
         int idCaja;
@@ -116,6 +119,8 @@ namespace ProyectoFinal
                         query = string.Format(query,idCaja,totalFactura);
                         da.executeCommand(query);
 
+                        
+
                         if (chkCredito.Checked == true)
                         {
                             //int idCliente = Convert.ToInt16(lCliente.EditValue);
@@ -126,8 +131,19 @@ namespace ProyectoFinal
                             sQuery += "values ({0},{1},'{2}',0,'{3}')";
                             sQuery = string.Format(sQuery, codigoProveedor, monto, date_credit, txtDocumento.Text);
                             da.executeCommand(sQuery);
+                            string insertdb_credit = "INSERT INTO log_compras(proveedor,empleado,sucursal,tipo_compra,documento,total,fecha) ";
+                            insertdb_credit += "VALUES ('{0}','{1}','{2}','Credito','{3}',{4}, getdate());";
+                            insertdb_credit = string.Format(insertdb_credit, codigoProveedor, nombreEmpleado, nombreSucursal, txtDocumento.Text, totalFactura);
+                            sql_conn.executeCommand(insertdb_credit);
                             MessageBox.Show("Se ha generado el credito con exito");
                             // el 0 significa que es COMPRA
+                        }
+                        else
+                        {
+                            string insertdb = "INSERT INTO log_compras(proveedor,empleado,sucursal,tipo_compra,documento,total,fecha) ";
+                            insertdb += "VALUES ('{0}','{1}','{2}','Contado','{3}',{4}, getdate());";
+                            insertdb = string.Format(insertdb, codigoProveedor, nombreEmpleado, nombreSucursal, txtDocumento.Text, totalFactura);
+                            sql_conn.executeCommand(insertdb);
                         }
                     }
                     else
@@ -140,6 +156,8 @@ namespace ProyectoFinal
                         DataTable tmp = new DataTable();
                         query = "select MAX(id_venta) as cod from tblVenta";
                         tmp = da.fillDataTable(query);
+
+                        
                         if (chkCredito.Checked == true)
                         {
                             //int idCliente = Convert.ToInt16(lCliente.EditValue);
@@ -150,8 +168,20 @@ namespace ProyectoFinal
                             sQuery += "values ({0},{1},'{2}',1,'{3}')";
                             sQuery = string.Format(sQuery, codigoCliente, monto, date_credit, txtDocumento.Text);
                             da.executeCommand(sQuery);
+                            string insertdb_credit = "INSERT INTO log_ventas(cliente,empleado,sucursal,tipo_venta,documento,total,fecha) ";
+                            insertdb_credit += "VALUES ('{0}','{1}','{2}','Credito','{3}',{4}, getdate());";
+                            insertdb_credit = string.Format(insertdb_credit, codigoCliente, nombreEmpleado, nombreSucursal, txtDocumento.Text, totalFactura);
+                            sql_conn.executeCommand(insertdb_credit);
+
                             MessageBox.Show("Se ha generado el credito con exito");
                             // el 1 significa que es VENTA
+                        }
+                        else {
+                            string insertdb = "INSERT INTO log_ventas(cliente,empleado,sucursal,tipo_venta,documento,total,fecha) ";
+                            insertdb += "VALUES ('{0}','{1}','{2}','Contado','{3}',{4}, getdate());";
+                            insertdb = string.Format(insertdb, codigoCliente, nombreEmpleado, nombreSucursal, txtDocumento.Text, totalFactura);
+                            sql_conn.executeCommand(insertdb);
+
                         }
                         imprimirFactura(Convert.ToInt16(tmp.Rows[0]["cod"]));
                     }

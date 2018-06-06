@@ -93,6 +93,7 @@
     </Compile>
     <Compile Include="ClassCaja.cs" />
     <Compile Include="DataAccess.cs" />
+    <Compile Include="DataAccessSQL.cs" />
     <Compile Include="dsFactura.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -386,11 +387,23 @@
     <Compile Include="f_abonos.Designer.cs">
       <DependentUpon>f_abonos.cs</DependentUpon>
     </Compile>
+    <Compile Include="f_confirmarTraslados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f_confirmarTraslados.Designer.cs">
+      <DependentUpon>f_confirmarTraslados.cs</DependentUpon>
+    </Compile>
     <Compile Include="f_deleteUser.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="f_deleteUser.Designer.cs">
       <DependentUpon>f_deleteUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="f_detalleTraslado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="f_detalleTraslado.Designer.cs">
+      <DependentUpon>f_detalleTraslado.cs</DependentUpon>
     </Compile>
     <Compile Include="f_EditUser.cs">
       <SubType>Form</SubType>
@@ -694,8 +707,14 @@
     <EmbeddedResource Include="f_abonos.resx">
       <DependentUpon>f_abonos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="f_confirmarTraslados.resx">
+      <DependentUpon>f_confirmarTraslados.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="f_deleteUser.resx">
       <DependentUpon>f_deleteUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="f_detalleTraslado.resx">
+      <DependentUpon>f_detalleTraslado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="f_EditUser.resx">
       <DependentUpon>f_EditUser.cs</DependentUpon>

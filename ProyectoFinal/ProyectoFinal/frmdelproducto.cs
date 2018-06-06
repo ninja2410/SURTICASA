@@ -13,6 +13,9 @@ namespace ProyectoFinal
     public partial class frmdelproducto : Form
     {
         DataAccess da = new DataAccess();
+        DataAccessSQL sql_conn = new DataAccessSQL();
+        public string nombreEmpleado;
+        public string nombreSucursal;
         public frmdelproducto()
         {
             InitializeComponent();
@@ -37,6 +40,12 @@ namespace ProyectoFinal
             try
             {
                 da.executeCommand(sCommand);
+
+                string insertdb = "INSERT INTO log_productos(id_producto,nombre,operacion,empleado,sucursal,fecha) ";
+                insertdb += "VALUES ('{0}','{1}','Se elimino el producto','{2}',{3}, getdate());";
+                insertdb = string.Format(insertdb, cod, nombre, nombreEmpleado, nombreSucursal);
+                sql_conn.executeCommand(insertdb);
+
                 MessageBox.Show("Se Elimino El producto " + nombre + " Con Exito");
                 cargar();
             }
