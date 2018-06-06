@@ -659,6 +659,9 @@
     <EmbeddedResource Include="frmnewsucursal.resx">
       <DependentUpon>frmnewsucursal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmPedidos.resx">
+      <DependentUpon>frmPedidos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmPrintReport.resx">
       <DependentUpon>frmPrintReport.cs</DependentUpon>
     </EmbeddedResource>
