@@ -967,3 +967,4 @@ C:\Users\LordPablo\Source\Repos\SURTICASA\ProyectoFinal\ProyectoFinal\obj\Debug\
 C:\Users\satigo\Source\Repos\SURTICASA2\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.FACTURA.resources
 C:\Users\satigo\Source\Repos\SURTICASA2\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.reporteKardex.resources
 C:\Users\satigo\Source\Repos\SURTICASA2\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.reporteProdyPres.resources
+C:\Users\satigo\Source\Repos\SURTICASA2\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.reporteTraslado.resources
