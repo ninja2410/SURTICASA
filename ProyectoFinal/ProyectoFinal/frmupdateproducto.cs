@@ -13,6 +13,10 @@ namespace ProyectoFinal
     public partial class frmupdateproducto : Form
     {
         DataAccess da = new DataAccess();
+        DataAccessSQL sql_conn= new DataAccessSQL();
+
+        public string nombreEmpleado;
+        public string nombreSucursal;
         public frmupdateproducto()
         {
             InitializeComponent();
@@ -91,6 +95,12 @@ namespace ProyectoFinal
             try
             {
                 da.executeCommand(sCommand);
+
+                string insertdb = "INSERT INTO log_productos(id_producto,nombre,operacion,empleado,sucursal,fecha) ";
+                insertdb += "VALUES ('{0}','{1}','Actualizacion producto','{2}',{3}, getdate());";
+                insertdb = string.Format(insertdb, cod_producto, nombre_producto, nombreEmpleado, nombreSucursal);
+                sql_conn.executeCommand(insertdb);
+
                 MessageBox.Show("Se Modifico el Producto " + nombre_producto + " Con Exito");
                 this.Close();
             }
