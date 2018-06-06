@@ -208,7 +208,7 @@ namespace ProyectoFinal
 
             }
         }
-        private void imprimirFactura(int codFactura)
+        public void imprimirFactura(int codFactura)
         {
             MessageBox.Show("Factura Generada con Exito");
             string squery;
