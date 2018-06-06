@@ -17,7 +17,8 @@ namespace ProyectoFinal
         #region builder
         public DataAccessSQL()
         {
-            connectionString = "Data Source=DESKTOP-36SIUND;Initial Catalog=bitcoradb;Persist Security Info=True;User ID=sa; Password=database;";
+            //connectionString = "Data Source=DESKTOP-36SIUND;Initial Catalog=bitcoradb;Persist Security Info=True;User ID=sa; Password=database;";
+            connectionString = "Data Source=LAPTOP-4F9A2N1N;Initial Catalog=bitacoradb;Persist Security Info=True;User ID=sa; Password=database;";
             cnConnection = new SqlConnection(connectionString);
         }
         #endregion

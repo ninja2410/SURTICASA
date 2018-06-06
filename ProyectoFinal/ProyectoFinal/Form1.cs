@@ -424,6 +424,7 @@ namespace ProyectoFinal
                 btnAbonoC.Enabled = true;
                 btnAbonoV.Enabled = true;
                 btnNewCaja.Enabled = false;
+                btnPedidos.Enabled = true;
 
                 MessageBox.Show("Caja aperturada correctamente.","Exito",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 
@@ -523,6 +524,7 @@ namespace ProyectoFinal
                 btnNewCompra.Enabled = false;                
                 btnAbonoC.Enabled = false;
                 btnAbonoV.Enabled = false;
+                btnPedidos.Enabled = false;
                 btnNewCaja.Enabled = true;
                 MessageBox.Show("Cierre de caja Correcto!","Exito",MessageBoxButtons.OK,MessageBoxIcon.Information);
 
@@ -664,6 +666,13 @@ namespace ProyectoFinal
             cT.empleado_id = codEmpleado;
             cT.MdiParent = this;
             cT.Show();
+        }
+
+        private void btnPedidos_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            frmPedidos miFrm = new frmPedidos();
+            miFrm.MdiParent = this;
+            miFrm.Show();
         }
     }
 }

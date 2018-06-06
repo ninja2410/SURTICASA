@@ -1223,4 +1223,8 @@ C:\Users\dlink\Source\Repos\SURTICASA\ProyectoFinal\ProyectoFinal\obj\Debug\Proy
 C:\Users\dlink\Source\Repos\SURTICASA\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.exe.licenses
 C:\Users\dlink\Source\Repos\SURTICASA\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.f_confirmarTraslados.resources
 C:\Users\dlink\Source\Repos\SURTICASA\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.f_detalleTraslado.resources
-C:\Users\dlink\Source\Repos\SURTICASA\ProyectoFinal\ProyectoFinal\bin\Debug\Oracle.DataAccess.dll
+C:\Users\satigo\Source\Repos\SURTICASA2\ProyectoFinal\ProyectoFinal\bin\Debug\Oracle.DataAccess.dll
+C:\Users\satigo\Source\Repos\SURTICASA2\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.f_confirmarTraslados.resources
+C:\Users\satigo\Source\Repos\SURTICASA2\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.f_detalleTraslado.resources
+C:\Users\satigo\Source\Repos\SURTICASA2\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.reporteCatalogoProds.resources
+C:\Users\satigo\Source\Repos\SURTICASA2\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.reporteTraslado.resources
