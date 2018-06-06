@@ -52,12 +52,16 @@ namespace ProyectoFinal
         private void btnGenerate_Click(object sender, EventArgs e)
         {
             string sucursal = gridLookUpEdit1.EditValue.ToString();
+            string miQuery = "select nombre_sucursal from tblSucursal where id_sucursal = {0}";
+            miQuery = string.Format(miQuery, sucursal);
+            
+
             
             string idProducto= gridLookUpEdit2.EditValue.ToString();
 
             reporteKardex miReporte = new reporteKardex();
             documentViewer1.DocumentSource = miReporte;
-            miReporte.InitData(sucursal, idProducto);
+            miReporte.InitData(da.executeScalar(miQuery).ToString() , idProducto);
             miReporte.CreateDocument();
         }
     }
