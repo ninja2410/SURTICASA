@@ -1223,3 +1223,4 @@ C:\Users\dlink\Source\Repos\SURTICASA\ProyectoFinal\ProyectoFinal\obj\Debug\Proy
 C:\Users\dlink\Source\Repos\SURTICASA\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.exe.licenses
 C:\Users\dlink\Source\Repos\SURTICASA\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.f_confirmarTraslados.resources
 C:\Users\dlink\Source\Repos\SURTICASA\ProyectoFinal\ProyectoFinal\obj\Debug\ProyectoFinal.f_detalleTraslado.resources
+C:\Users\dlink\Source\Repos\SURTICASA\ProyectoFinal\ProyectoFinal\bin\Debug\Oracle.DataAccess.dll

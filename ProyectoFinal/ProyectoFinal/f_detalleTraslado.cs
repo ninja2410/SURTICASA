@@ -18,6 +18,8 @@ namespace ProyectoFinal
             InitializeComponent();
         }
         public int id_traslado;
+        public int sucursal_id;
+        public int empleado_id;
         DataAccess da = new DataAccess();
         DataTable dt = new DataTable();
 
@@ -30,10 +32,25 @@ namespace ProyectoFinal
         {
             try
             {
-                foreach(DataRow x in dt.Rows)
+                foreach (DataRow x in dt.Rows)
                 {
-                    //string insrt_asign = "";
+                    string get_due_date = "SELECT fecha_caducidad, id_asignacionprecio FROM tblAsignacionCantidad WHERE id_asignacion = {0};";
+                    get_due_date = string.Format(get_due_date, x["id_asignacion"]);
+                    DataTable tmp = da.fillDataTable(get_due_date);
+                    DateTime temp = Convert.ToDateTime(tmp.Rows[0]["fecha_caducidad"]);
+
+                   // string due_date = Date.ToString("yyyy-MM-dd");
+                    string insert_asign = "INSERT INTO tblAsignacionCantidad(cantidad,id_producto,id_sucursal,fecha_caducidad,id_asignacionprecio) ";
+                    insert_asign += "VALUES({0},'{1}',{2},'{3}',{4});";
+                    insert_asign = string.Format(insert_asign,x["cantidad"], x["id_producto"],sucursal_id, temp.ToString("yyyy-MM-dd"), tmp.Rows[0]["id_asignacionprecio"]);
+                    //MessageBox.Show(insert_asign);
+                    da.executeCommand(insert_asign);
                 }
+                string update_traslate = "UPDATE tblTraslado SET id_empleado_entrada = {0}, fecha_entrada = CURDATE() WHERE id_traslado = {1} ;";
+                update_traslate = string.Format(update_traslate,empleado_id, id_traslado);
+                da.executeCommand(update_traslate);
+                MessageBox.Show("Confirmacion de traslado exitosa.", "Traslado Completado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
             }
             catch (Exception ex)
             {

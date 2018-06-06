@@ -41,7 +41,10 @@ namespace ProyectoFinal
            int id_traslado_check = Convert.ToInt16(gridView1.GetRowCellValue(gridView1.FocusedRowHandle, "id_traslado"));
             f_detalleTraslado detailTraslate = new f_detalleTraslado();
             detailTraslate.id_traslado = id_traslado_check;
-            detailTraslate.Show();
+            detailTraslate.sucursal_id = sucursal_id;
+            detailTraslate.empleado_id = empleado_id;
+            detailTraslate.ShowDialog();
+            uploadTraslate();
         }
     }
 }
